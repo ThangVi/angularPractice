@@ -1,11 +1,10 @@
 angular.module( 'ngBoilerplate.about', [
   'ui.router',
-  'placeholders',
   'ui.bootstrap'
 ])
 
 .config(function config( $stateProvider ) {
-  $stateProvider.state( 'about', {
+  $stateProvider.state( 'app.about', {
     url: '/about',
     views: {
       "main": {
@@ -13,7 +12,7 @@ angular.module( 'ngBoilerplate.about', [
         templateUrl: 'about/about.tpl.html'
       }
     },
-    data:{ pageTitle: 'What is It?' }
+    data:{ pageTitle: 'About' }
   });
 })
 
@@ -27,3 +26,4 @@ angular.module( 'ngBoilerplate.about', [
 })
 
 ;
+

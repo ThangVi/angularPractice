@@ -1,7 +1,7 @@
 angular.module( 'ngBoilerplate.services', [
 ])
 
-.factory('AuthenticationService', [ '$rootScope', '$http', function($rootScope, $http){
+.factory('AuthenticationService', [ '$rootScope', '$http', '$q', function($rootScope, $http, $q){
 
   var factory = {};
 
@@ -19,19 +19,19 @@ angular.module( 'ngBoilerplate.services', [
        }
     };
 
+    var defer = $q.defer();
     new Fingerprint2().get(function(result, components) {
       req.data.deviceToken = result;
-      $http(req)
+      return $http(req)
         .then(function(resp){
-          $(".body-content").fadeIn();
-          $(".giphy").hide();
-          $rootScope.token = resp.data.responseData;
+          defer.resolve();
+          $rootScope.token = resp.data.responseData.token;
+          $rootScope.loggedIn = true;
         }, function(){
-          $(".body-content").hide();
-          $(".giphy").show();
+          defer.reject();
         });
     });
-
+    return defer.promise;
   };
 
   return factory;

@@ -17,6 +17,7 @@
     <meta property="og:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- font awesome from BootstrapCDN -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -28,10 +29,10 @@
     <script type="text/javascript" src="<%= file %>"></script><% }); %>
   </head>
 <body>
-    <div class="giphy" id="giphy">
+    <div class="giphy" id="giphy" ng-show="!$root.loggedIn">
         <img src="assets/images/giphy.gif">
     </div>
-    <div class="body-content">
+    <div class="body-content" ng-show="$root.loggedIn">
 
       <div ng-include="'header/header.tpl.html'"></div>
 

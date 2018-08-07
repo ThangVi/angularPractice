@@ -30,7 +30,7 @@ angular.module( 'ngBoilerplate', [
 .run( function run () {
 })
 
-.controller( 'AppCtrl', [ '$scope', '$location', 'AuthenticationService', function AppCtrl ( $scope, $location, AuthenticationService ) {
+.controller( 'AppCtrl', [ '$scope', '$location', 'AuthenticationService', function AppCtrl ( $scope, $location, AuthenticationService) {
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
@@ -38,4 +38,5 @@ angular.module( 'ngBoilerplate', [
   });
 
 }]);
+
 
