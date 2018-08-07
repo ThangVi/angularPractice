@@ -1,0 +1,16 @@
+{
+  "name": "ng-boilerplate",
+  "version": "0.3.2",
+  "devDependencies": {
+    "angular": "~1.2",
+    "angular-mocks": "~1.2",
+    "angular-bootstrap": "~0.10.0",
+    "angular-ui-router": "~0.2"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "font-awesome": "^5.2.0",
+    "fingerprintjs2": "^1.8.1",
+    "bootstrap": "3.3.7"
+  }
+}
