@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="ngBoilerplate" ng-controller="AppCtrl">
+<head>
+    <title ng-bind="pageTitle"></title>
+
+    <!-- social media tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@joshdmiller">
+    <meta name="twitter:title" content="ngBoilerplate">
+    <meta name="twitter:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+    <meta name="twitter:creator" content="@joshdmiller">
+    <meta name="twitter:image:src" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846">
+    <meta property="og:title" content="ngBoilerplate" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://bit.ly/ngBoilerplate" />
+    <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
+    <meta property="og:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+  </head>
+<body>
+    <div class="giphy" id="giphy">
+        <img src="assets/images/giphy.gif">
+    </div>
+    <div class="body-content">
+
+      <div ng-include="'header/header.tpl.html'"></div>
+
+      <div ui-view></div>
+
+        
+
+    <footer class="footer fn-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 company-info fn-100">
+                    <div class="col-md-3 col-sm-3 fn-float"><p>Edmonds Racing Pty Ltd 2018</p></div>
+                    <div class="col-md-2 col-sm-2 fn-float"><p>Terms and Conditions</p></div>
+                    <div class="col-md-2 col-sm-2 fn-float"><p>Privacy Pollicy</p></div>
+                    <div class="col-md-3 col-sm-3 fn-float"><p>Photo Credit to <span class="text-blue">Darren Winningham</span></p></div>
+                    <div class="col-md-2 col-sm-2 fn-float"><p>Privacy Pollicy</p></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>
+
