@@ -52,7 +52,10 @@
       <div class="horse-available col-md-3 col-sm-3">
         <div id="carouselControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner horse-inner" id="horse-inner">
-          
+            <div ng-repeat="item in horse[0]">
+              {{item.name}}
+
+            </div>
           </div>
           <div class="arrow-control">
             <a class="carousel-control-prev left-arrow box-arrow" href="#carouselControls" role="button" data-slide="prev">
@@ -143,7 +146,7 @@
         </div>
         <div id="carouselControlsRight" class="carousel slide race-news" data-ride="carousel">
           <div class="carousel-inner" id="race-inner">
-            <div ng-repeat="item in news">
+            <div ng-repeat="item in stablenew[0]">
               {{item.title}}
 
             </div>

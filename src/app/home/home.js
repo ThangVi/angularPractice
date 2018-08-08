@@ -45,11 +45,42 @@ angular.module( 'ngBoilerplate.home', [
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
     }
 
+// important 8/8/2018-----------------------------------------------------------------
+
     NewsService.news()
       .then(function(resp){
+        $scope.stablenew = [];
+        var range = [];
+        var j = 0;
         $scope.news = resp.data.responseData.stableNews;
+        var count = $scope.news.length/10;
+        for (var i = 0; i < $scope.news.length; i++) {
+          range.push($scope.news[i]);
+          if ((i+1)%10 === 0) {
+            $scope.stablenew[j] = range;
+            j++;
+            range = [];
+          }
+        }
       });
-    HorseService.horse();
+    HorseService.horse()
+      .then(function(resp){
+        $scope.horse = [];
+        var range = [];
+        var j = 0;
+        $scope.datahorse = resp.data.responseData.elements;
+        console.log($scope.datahorse.length);
+        var count = $scope.elements.length/10;
+        for (var i = 0; i < $scope.elements.length; i++) {
+          range.push($scope.elements[i]);
+          if ((i+1)%10 === 0) {
+            $scope.horse[j] = range;
+            console.log($scope.horse[j]);
+            j++;
+            range = [];
+          }
+        }
+      });
   });
 }])
 
