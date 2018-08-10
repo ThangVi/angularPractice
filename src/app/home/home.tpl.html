@@ -52,9 +52,12 @@
       <div class="horse-available col-md-3 col-sm-3">
         <div id="carouselControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner horse-inner" id="horse-inner">
-            <div ng-repeat="item in horse[0]">
-              {{item.name}}
-
+            <div class="carousel-item" id="horse-item1" ng-repeat="ho in horse" ng-class="{'active': $index===0}">
+              <div class="horse-image" data-toggle="modal" data-target="#myModal0" ng-repeat="item in ho">
+                <a href="#myModal0"><img src="https://prism.horse/api/public/image/{{item.listMedia[0].media.url}}"/></a>
+                <h3>{{item.horse.name}}</h3>
+                <p>{{item.id}}</p>
+              </div>
             </div>
           </div>
           <div class="arrow-control">
@@ -147,7 +150,7 @@
         <div id="carouselControlsRight" class="carousel slide race-news" data-ride="carousel">
           <div class="carousel-inner" id="race-inner">
             <div ng-repeat="item in stablenew[0]">
-              {{item.title}}
+              <div class="race"><a href="#"><img src="{{item.media.images[0].cdnSmall}}"></a><div class="right-newletter"><a href="#"><h3>{{item.title}}</h3></a><p>{{item.publishedDate}}</p></div></div>
 
             </div>
           </div>

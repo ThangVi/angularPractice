@@ -53,11 +53,11 @@ angular.module( 'ngBoilerplate.home', [
         var range = [];
         var j = 0;
         $scope.news = resp.data.responseData.stableNews;
-        var count = $scope.news.length/10;
         for (var i = 0; i < $scope.news.length; i++) {
           range.push($scope.news[i]);
           if ((i+1)%10 === 0) {
             $scope.stablenew[j] = range;
+            console.log($scope.stablenew[j]);
             j++;
             range = [];
           }
@@ -69,13 +69,10 @@ angular.module( 'ngBoilerplate.home', [
         var range = [];
         var j = 0;
         $scope.datahorse = resp.data.responseData.elements;
-        console.log($scope.datahorse.length);
-        var count = $scope.elements.length/10;
-        for (var i = 0; i < $scope.elements.length; i++) {
-          range.push($scope.elements[i]);
-          if ((i+1)%10 === 0) {
+        for (var i = 0; i < $scope.datahorse.length; i++) {
+          range.push($scope.datahorse[i]);
+          if ((i+1)%5 === 0) {
             $scope.horse[j] = range;
-            console.log($scope.horse[j]);
             j++;
             range = [];
           }
